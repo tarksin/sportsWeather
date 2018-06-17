@@ -4,10 +4,10 @@ const express = require('express'),
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use((req, res, next) =>{
-    console.log('10 inside some middleware');
+   // console.log('10 inside some middleware');
     var now = new Date().toString();
     let datum = `${now} :  ${req.method} : ${req.url}\n`;
     fs.appendFile('maxxlog.log', datum , (err)=>{
