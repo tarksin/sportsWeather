@@ -49,6 +49,16 @@ app.get('/bad', (req, res) => {
     res.send(objError);
 });
 
+
+app.get('/projects', (req, res)=>{
+    let objThing = {
+        pageTitle:"Projects",
+        projects: ['Practice room scheduling','Locker rental','Summer camp sign-up','fastbooks']
+       };
+
+    res.render('projects', {objThing});
+});
+
 app.listen(port, () => {
     console.log(`callback in app.listen(): server is running on ${port}`);
 });
